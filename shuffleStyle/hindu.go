@@ -1,1 +1,1 @@
-package shufflestyle
+package shuffleStyle

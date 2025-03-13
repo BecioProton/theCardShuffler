@@ -1,6 +1,34 @@
-package shufflestyle
+package shuffleStyle
 
-// so the overhand takes a number x of cards from the bottom so deckRight[max-rand] to deckRight[max] is taken away
-// the new sub array or deckRight is then put back in a hole that opens in a non accurate middle of the deckLeft..
-// leftdeck.size()/2 +||- 1~5 cards in that space the leftArray shifts and makes space for rightArray.
-// what this means is that a new array is create which has deckleft[0] .. deckLeft[half-1], deckRight[0] .. deckRight[max],deckLeft[half+1] .. deckLeft[max]
+import (
+	"math/rand"
+	"theCardShuffler/cards"
+	"time"
+)
+
+// ItalianShuffle simulates an Italian Shuffle on the Deck struct
+func ItalianShuffle(d *cards.Deck) {
+	// Split deck into two halves
+	mid := len(d.Cards) / 2
+	half1 := d.Cards[:mid]
+	half2 := d.Cards[mid:]
+
+	// Create a new shuffled deck
+	shuffledDeck := []cards.Card{}
+	rand.Seed(time.Now().UnixNano())
+
+	// Interleave the two halves with randomness
+	for len(half1) > 0 || len(half2) > 0 {
+		// Randomly decide whether to pick from half1 or half2
+		if len(half1) > 0 && rand.Float64() > 0.5 {
+			shuffledDeck = append(shuffledDeck, half1[0])
+			half1 = half1[1:]
+		} else if len(half2) > 0 {
+			shuffledDeck = append(shuffledDeck, half2[0])
+			half2 = half2[1:]
+		}
+	}
+
+	// Update the original deck with the shuffled deck
+	d.Cards = shuffledDeck
+}
