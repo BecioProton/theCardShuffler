@@ -13,3 +13,11 @@
 
 
 ### Also, if you want to use any of this code for your card game, please help yourself...
+
+
+notes to self:
+
+* how do you evaluate the effectiveness of a shuffling method?
+    * Shannon entropy
+    * Distribution measure or Montecarlo test(chi-square)
+    * Correlation Between Successive Cards
