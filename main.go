@@ -11,7 +11,9 @@ func main() {
 	frenchDeck := cards.CreateFrenchDeck()
 	frenchDeck.Print()
 
-	shuffleStyle.ItalianShuffle(frenchDeck)
+	shuffleStyle.ItalianShuffle(&frenchDeck)
+
+	frenchDeck.Print()
 
 	fmt.Println("\nItalian Deck:")
 	italianDeck := cards.CreateItalianDeck()
