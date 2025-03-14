@@ -10,7 +10,7 @@ import (
 func ItalianShuffle(d *cards.Deck) {
 	rand.Seed(time.Now().UnixNano())
 
-	// Randomize the number of times to repeat the shuffle (e.g., 3 to 7 times)
+	// Randomize the number of times to repeat the shuffle (e.g., 5 to 10 times)
 	times := rand.Intn(5) + 5 // Generates a number between 3 and 7
 
 	for i := 0; i < times; i++ {
