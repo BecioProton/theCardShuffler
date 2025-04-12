@@ -1,6 +1,6 @@
 ## This repository contains 4 different "Human" method of card shuffling.
 
-### My aim for this repository is to together with arrays and to see if a more human approach to this problem gives better results.
+### My aim for this repository is evaluate if a human approach gives better results.
 
 ### As far as I am aware there are many different ways to shuffle the card:
 
